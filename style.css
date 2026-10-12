@@ -2,3 +2,28 @@
 
 .question-card select{width:100%;border:1px solid #3b395d;border-radius:10px;padding:11px;background:#111126;color:white;font:inherit;font-size:13px;outline:none}
 .results-list{margin-top:14px;padding:14px;background:#121228;border:1px solid #39365b;border-radius:13px}.results-list h3{font-size:15px;margin:0 0 10px}.result-row{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid #343252;font-size:12px}.result-row:last-child{border-bottom:0}.result-row span{color:var(--mint);font-weight:800;white-space:nowrap}.primary-btn:disabled,.secondary-btn:disabled{opacity:.65;cursor:wait;transform:none}
+
+/* FriendVibe 3D refresh: midnight blue + electric cyan + violet */
+:root{--bg:#07111f;--panel:#101f35;--text:#f4fbff;--muted:#a9bfd4;--pink:#25e0d0;--purple:#6b8cff;--line:#25435c;--mint:#7dffd7}
+body{background:radial-gradient(ellipse at 15% 0%,#17365a 0,transparent 38%),radial-gradient(ellipse at 90% 35%,#20235a 0,transparent 34%),linear-gradient(160deg,#07111f,#0b1428 58%,#07111f);background-attachment:fixed}
+.glow{opacity:.24;filter:blur(90px)}.glow-one{background:#00e5d4}.glow-two{background:#6b68ff}
+.brand-icon,.avatar{background:linear-gradient(135deg,#16d9cf,#687bff);box-shadow:0 7px 0 #172f61,0 13px 28px #00d9d044}
+.top-note,.pill{border-color:#28566b;background:linear-gradient(135deg,#102e42,#1b2450);box-shadow:inset 0 1px #ffffff12,0 8px 22px #0003}
+.gradient-text{background:linear-gradient(95deg,#45f4d8,#69bfff 52%,#a49aff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-art{perspective:900px}.big-emoji{filter:drop-shadow(0 22px 16px #0009);transform-style:preserve-3d}
+.float-card{background:linear-gradient(145deg,#203d5b,#121e3c);border:1px solid #4b7194;box-shadow:0 8px 0 #091427,0 20px 35px #0007,inset 0 1px #ffffff1a;transition:transform .25s,box-shadow .25s}
+.card-a{transform:rotateY(15deg) rotateZ(-9deg)}.card-b{transform:rotateY(-15deg) rotateZ(8deg)}
+.float-card:hover{box-shadow:0 4px 0 #091427,0 28px 42px #0008,inset 0 1px #ffffff24;translate:0 -5px}
+.primary-btn{background:linear-gradient(115deg,#13cfc7,#5578ff 65%,#8768ff);box-shadow:0 7px 0 #172a62,0 15px 30px #2777e344,inset 0 1px #ffffff55;transform:translateY(0);transition:transform .18s,box-shadow .18s,filter .18s}
+.primary-btn:hover{transform:translateY(-3px);box-shadow:0 10px 0 #172a62,0 22px 34px #2777e355,inset 0 1px #ffffff55}
+.primary-btn:active{transform:translateY(3px);box-shadow:0 3px 0 #172a62,0 8px 18px #2777e333}
+.panel{background:linear-gradient(145deg,#142943eF,#0c192eef);border:1px solid #2c4f70;box-shadow:0 12px 0 #060d19,0 28px 65px #0007,inset 0 1px #ffffff10;backdrop-filter:blur(14px);transform:perspective(1200px) rotateX(.4deg)}
+.panel input,.question-card select{background:#081629;border-color:#294964;color:#f4fbff}.panel input:focus{border-color:#35e4d8;box-shadow:0 0 0 3px #35e4d822}
+.question-card,.share-preview,.quiz-head{background:linear-gradient(145deg,#18334e,#101e37);border-color:#2c4d6b;box-shadow:0 5px 0 #081222,0 12px 20px #0003,inset 0 1px #ffffff0b}
+.option{background:linear-gradient(145deg,#122943,#0d1a30);border-color:#29455f;transition:transform .18s,border-color .18s,box-shadow .18s}
+.option:hover{transform:translateY(-2px);border-color:#37dcd4;box-shadow:0 5px 12px #0004}.option:has(input:checked){border-color:#38e8db;background:linear-gradient(145deg,#174c59,#202d58);box-shadow:0 0 0 2px #38e8db18}
+.secondary-btn{background:linear-gradient(145deg,#1b3b57,#172445);border-color:#3b6384;box-shadow:0 4px 0 #081323,0 9px 15px #0003}.secondary-btn:hover{transform:translateY(-2px)}
+.copy-btn{background:linear-gradient(135deg,#48f2d6,#35c4e8);color:#06202c;box-shadow:0 4px 0 #167c89,0 9px 18px #0003}
+.notice{background:linear-gradient(145deg,#172b43,#111d34);border:1px solid #29435d;color:#b9d2e6}.step-label{color:#5de9df}.back-btn,.text-btn{color:#71e7e4}.pulse{background:#61ffdb;box-shadow:0 0 14px #61ffdb}
+.score-ring{background:conic-gradient(#50f5d2 var(--score,0%),#243b56 0)}.score-ring:before{background:#101f35}.results-list{background:#0b192d;border-color:#29435d}.result-row{border-color:#25435c}.result-row span{color:#58f0d4}#toast{background:#eaffff;color:#082238;box-shadow:0 10px 35px #0006}
+@media(prefers-reduced-motion:no-preference){.panel{animation:panel-arrive .45s ease both}@keyframes panel-arrive{from{opacity:.65;transform:perspective(1200px) rotateX(3deg) translateY(10px)}to{opacity:1;transform:perspective(1200px) rotateX(.4deg) translateY(0)}}}
