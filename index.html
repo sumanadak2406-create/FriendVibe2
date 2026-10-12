@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101026">
+  <meta name="description" content="বন্ধুদের নিয়ে মজার quiz তৈরি করো, লিংক শেয়ার করো, আর দেখো কে তোমাকে কতটা চেনে!">
+  <title>FriendVibe — Find Your Friend Vibe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="glow glow-one"></div><div class="glow glow-two"></div>
+  <header class="topbar">
+    <a class="brand" href="./"><span class="brand-icon">✦</span> FriendVibe</a>
+    <span class="top-note">JUST FOR FUN ✨</span>
+  </header>
+
+  <main class="shell">
+    <section class="hero" id="homeView">
+      <div class="pill"><span class="pulse"></span> YOUR FRIEND GROUP, TESTED</div>
+      <h1>তোমার বন্ধুরা<br><span class="gradient-text">তোমাকে কতটা চেনে?</span></h1>
+      <p class="hero-copy">নিজের quiz বানাও, বন্ধুদের সঙ্গে share করো, আর মজার ফলাফল দেখো। কাউকে বিচার করার জন্য নয়—শুধুই মজা!</p>
+      <div class="hero-art" aria-hidden="true">
+        <div class="float-card card-a">💜<small>BESTIE</small></div>
+        <div class="float-card card-b">🤝<small>FRIENDS</small></div>
+        <div class="big-emoji">🫶</div>
+        <div class="spark spark-a">✦</div><div class="spark spark-b">✧</div>
+      </div>
+      <button class="primary-btn" id="startCreate">নিজের Quiz বানাও <span>→</span></button>
+      <div class="trust-row"><span>⚡ ১ মিনিটে তৈরি</span><span>🔗 সহজে Share</span><span>🆓 ফ্রি</span></div>
+    </section>
+
+    <section class="panel hidden" id="createView">
+      <button class="back-btn" data-back>← ফিরে যাও</button>
+      <div class="step-label">STEP 01 / CREATE</div>
+      <h2>তোমার quiz সেট করো</h2>
+      <p class="muted">তোমার নাম আর কয়েকটি উত্তর যোগ করো।</p>
+      <form id="createForm">
+        <label for="creatorName">তোমার নাম</label>
+        <input id="creatorName" maxlength="30" placeholder="যেমন: Suman" required>
+        <div class="field-heading"><label>প্রশ্ন ও সঠিক উত্তর</label><span class="muted tiny">কমপক্ষে 3টি</span></div>
+        <div id="questionEditor"></div>
+        <button type="button" class="secondary-btn" id="addQuestion">＋ আরেকটি প্রশ্ন</button>
+        <button type="submit" class="primary-btn full">Quiz তৈরি করো <span>→</span></button>
+      </form>
+    </section>
+
+    <section class="panel hidden" id="shareView">
+      <div class="success-icon">🎉</div>
+      <div class="step-label">YOUR QUIZ IS READY</div>
+      <h2>এবার বন্ধুদের পাঠাও!</h2>
+      <p class="muted">লিংকটি কপি করে বন্ধুদের সঙ্গে শেয়ার করো। তোমার কুইজ এখন FriendVibe ডেটাবেসে সংরক্ষিত। লিংকটি বন্ধুদের সঙ্গে শেয়ার করো।</p>
+      <div class="share-preview"><div class="avatar">✨</div><div><strong id="shareTitle">Suman-এর Quiz</strong><small>FriendVibe • Friend quiz</small></div></div>
+      <label for="shareUrl">তোমার Quiz Link</label>
+      <div class="copy-row"><input id="shareUrl" readonly><button class="copy-btn" id="copyLink">কপি</button></div>
+      <button class="primary-btn full" id="openQuiz">নিজের Quiz দেখো →</button>
+      <button class="secondary-btn full" id="showResults">বন্ধুদের ফলাফল দেখো</button>
+      <div id="resultsList" class="results-list hidden"></div>
+      <button class="text-btn" id="newQuiz">নতুন Quiz তৈরি করো</button>
+      <div class="notice">🔒 সঠিক উত্তর গোপন রাখা হয়। কুইজের ফলাফল শুধুমাত্র কুইজ-তৈরির অ্যাকাউন্ট দেখতে পারবে।</div>
+    </section>
+
+    <section class="panel hidden" id="quizView">
+      <button class="back-btn" data-home>← Home</button>
+      <div class="step-label">FRIEND CHALLENGE</div>
+      <div class="quiz-head"><div class="avatar">💌</div><div><h2 id="quizHeading">Friend Quiz</h2><p class="muted" id="quizSub">তুমি কতটা চেনো?</p></div></div>
+      <form id="answerForm">
+        <label for="playerName">তোমার নাম (ঐচ্ছিক)</label>
+        <input id="playerName" maxlength="30" placeholder="তোমার নাম লিখো">
+        <div id="quizQuestions"></div>
+        <button class="primary-btn full" type="submit">উত্তর জমা দাও <span>→</span></button>
+      </form>
+    </section>
+
+    <section class="panel hidden" id="resultView">
+      <div class="result-confetti">✦ ✧ ✦</div>
+      <div class="step-label">YOUR RESULT</div>
+      <div class="score-ring"><div><strong id="score">0%</strong><small>সঠিক উত্তর</small></div></div>
+      <h2 id="resultTitle">দারুণ চেষ্টা!</h2>
+      <p class="muted center" id="resultMessage"></p>
+      <div class="result-stats"><div><strong id="correctCount">0</strong><span>সঠিক</span></div><div><strong id="totalCount">0</strong><span>মোট প্রশ্ন</span></div></div>
+      <button class="primary-btn full" id="shareResult">ফলাফল Share করো ↗</button>
+      <button class="text-btn" data-home>নিজের Quiz বানাও</button>
+      <p class="disclaimer">এটি শুধুই বিনোদনের quiz; ফলাফল দিয়ে বন্ধুত্ব বা বিশ্বাসযোগ্যতা বিচার করা যায় না।</p>
+    </section>
+    <footer><span>FriendVibe © 2026</span><span>Made for fun, not for judging 💜</span></footer>
+  </main>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+</body>
+</html>
